@@ -21,8 +21,8 @@ with open(customers_file_path, "w", newline="", encoding="utf-8") as f:
     for i in range(1, customer_record_length + 1):
         customer_id = i
         customer_name = fake_obj.name()
-        email = fake_obj.email()
-        phone_number = fake_obj.phone_number()
+        email = f"user{i}_{fake_obj.domain_name()}"
+        phone_number = fake_obj.numerify(text="###-###-####")
         city = fake_obj.city()
         
         date_obj = fake_obj.date_time_between(start_date='-3y', end_date='now')
